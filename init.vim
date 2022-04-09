@@ -89,4 +89,16 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
+xnoremap <buffer> p :<c-u>call <SID>Paste()<cr>
+
+" The <SID> above is the same as the s: here
+function! s:Paste()
+  call tagalong#Trigger()
+
+  " gv reselects the previously-selected area, and then we just paste
+  normal! gvp
+
+  call tagalong#Apply()
+endfunction
+
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
