@@ -51,6 +51,9 @@ let g:coc_global_extensions = [
   \ 'coc-python',
   \ 'coc-html',
   \ 'coc-css',
+  \	'coc-clangd',
+  \ 'coc-docker',
+  \ 'coc-yaml',
   \ ]
 
 nnoremap <C-f> :NERDTreeFocus<CR>
